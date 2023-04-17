@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="signUp()">
+        sign up
+    </button>
+    <button >
+       log in
+    </button>
+    <div id="input"></div>
+    <script>
+        function signUp(){
+           let input =  document.getElementById("input")
+           input.innerHTML = "<div>" + 
+            "<h2> Sign Up </h2>"+ 
+            "<input className=first placeholder=" + "First" + "Name*" + ">" +
+            "<input className=last placeholder=" + "Last" + "Name*" + ">" +
+            "<input className=last placeholder=" + "EmailAddress*" + ">" +
+            "<input className=last placeholder=" + "SetApassword*" + ">" +
+            "<button> get started </button>"
+            "</div>"
+
+        }
+       
+    </script>
+</body>
+</html>
