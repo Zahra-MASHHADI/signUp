@@ -5,28 +5,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/index.css"/>
 </head>
 <body>
-    <button onclick="signUp()">
+    <div class="box">
+        <div class="boxs">
+    <button id="sign" onclick="signUp()">
         sign up
     </button>
-    <button >
+    <button id="log" onclick="logIn()">
        log in
     </button>
     <div id="input"></div>
+    </div>
+</div>
     <script>
+        let input =  document.getElementById("input")
         function signUp(){
-           let input =  document.getElementById("input")
            input.innerHTML = "<div>" + 
             "<h2> Sign Up </h2>"+ 
-            "<input className=first placeholder=" + "First" + "Name*" + ">" +
-            "<input className=last placeholder=" + "Last" + "Name*" + ">" +
-            "<input className=last placeholder=" + "EmailAddress*" + ">" +
-            "<input className=last placeholder=" + "SetApassword*" + ">" +
-            "<button> get started </button>"
+            "<input id=first placeholder=" + "First" + "Name*" + ">" +
+            "<input id=last placeholder=" + "Last" + "Name*" + ">" +
+            "<input id=email placeholder=" + "EmailAddress*" + ">" +
+            "<input type=password id=password placeholder=" + "SetApassword*" + ">" +
+            "<input type=password id=passwordS placeholder=" + "confrimYourPassword*" + ">" +
+            "<br>" +
+            "<input id=submit type=submit onclick=check()>" 
             "</div>"
-
+          
         }
+        function logIn(){
+            input.innerHTML = "<div>" + 
+            "<h2> Log In </h2>"+ 
+            "<input id=email placeholder=" + "EmailAddress*" + ">" +
+            "<input type=password id=password placeholder=" + "Password*" + ">" +
+            "<br>" +
+            "<input id=submit type=submit onclick=check()>" 
+            "</div>"
+        }
+        function check(){
+            let firstname = document.getElementById("first")
+            let first = firstname.value
+            let lastname = document.getElementById("last")
+            let last = lastname.value
+            let email = document.getElementById("email")
+            let emailValue = email.value
+            var reg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+            let password = document.getElementById("password")
+            let passwordValue = password.value
+            let passwordS = document.getElementById("passwordS")
+            let passwordSValue = passwordS.value
+            console.log(isNaN(first))
+                if(first === "" && first.length <= 3 && isNaN(first) === false){
+                    alert("please write your first name correctly ")
+                    firstname.style.background = " rgba(255, 117, 117, 0.683)"
+                    firstname = ""
+                    
+                }
+                else{
+                    firstname.style.background = "rgba(182, 251, 182, 0.642)"
+                    
+                   
+                    
+                }
+                if( last === "" && last.length <= 3 && isNaN(last)=== false){
+                    
+                    alert("please write your last name correctly ")
+                    lastname.style.background = " rgba(255, 117, 117, 0.683)"
+                }
+                else{
+                    lastname.style.background = "rgba(182, 251, 182, 0.642)"
+                }
+                if (reg.test(emailValue) == true ){
+                    email.style.background = "rgba(182, 251, 182, 0.642)"
+                }
+                else{
+                    alert("please write your email correctly ")
+                    email.style.background = " rgba(255, 117, 117, 0.683)"
+                }
+                if ( passwordValue.length <= 7 ){
+                    alert("your password must be more than 8 caracter ")
+                }
+                else{
+                    password.style.background = "rgba(182, 251, 182, 0.642)"
+                }
+                if ( passwordValue !== passwordSValue ){
+                    alert("your password  ")
+                }
+            }
        
     </script>
 </body>

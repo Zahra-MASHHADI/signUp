@@ -1,0 +1,44 @@
+.box{
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid black ;
+    width: 30%;
+    height: 500px;
+    background-color: rgb(71, 71, 71);
+}
+button{
+    width: 200px;
+    height: 40px;
+    margin: 40px -3px;
+    background-color: rgb(139, 242, 174);
+    color: #fff;
+    border: none;
+    cursor:pointer;
+}
+#email{
+    width:80%;
+    margin-top: 20px;
+    height: 30px;
+     
+}
+#first{
+    margin-right:28px;
+    height: 30px;
+}
+#last{
+    height: 30px;
+}
+#password , #passwordS{
+    margin-top: 20px;
+    width:80%;
+    height: 30px;
+}
+#submit{
+    margin-top: 20px;
+    width:80%;
+    height: 50px;
+    background-color: rgb(139, 242, 174);
+    color: #fff;
+    border: none;
+    cursor:pointer;
+}
